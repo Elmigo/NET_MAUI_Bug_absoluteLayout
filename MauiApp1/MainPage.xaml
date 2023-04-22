@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.MainPage">
+
+    <Grid>
+        <CollectionView x:Name="testView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:TestList">
+                    <Frame>
+                        <Grid RowDefinitions="auto,auto">
+                            <Label Grid.Row="0" 
+                                   Text="{Binding string1}"
+                                   FontSize="32"
+                                   HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" 
+                                   Text="{Binding string2}"
+                                   FontSize="18"
+                                   HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <AbsoluteLayout>
+            <ImageButton Source="funnel.svg" 
+                         AbsoluteLayout.LayoutFlags="PositionProportional" 
+                         AbsoluteLayout.LayoutBounds="0.94,0.97,60,60"
+                         BackgroundColor="Black"
+                         CornerRadius="30"
+                         Padding="12,16,12,12">
+                <ImageButton.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,0"
+                            Radius="20"
+                            Opacity="0.75" />
+                </ImageButton.Shadow>
+            </ImageButton>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>
